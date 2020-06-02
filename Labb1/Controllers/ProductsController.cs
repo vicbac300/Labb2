@@ -13,9 +13,9 @@ namespace Labb1.Controllers
     {
         private readonly IProductService productService;
         
-        public ProductsController()
+        public ProductsController(IProductService productService)
         {
-            this.productService = new MockProductService();
+            this.productService = productService;
         }
         
         public IActionResult Index()

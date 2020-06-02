@@ -12,6 +12,7 @@ using Labb1.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Labb1.Services;
 
 namespace Labb1
 {
@@ -27,6 +28,16 @@ namespace Labb1
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddCors(options =>
+			{
+				options.AddDefaultPolicy(
+					builder =>
+					{
+						builder.WithOrigins("https://localhost:44347/");
+					});
+			});
+
+
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(
 					Configuration.GetConnectionString("DefaultConnection")));
@@ -34,6 +45,11 @@ namespace Labb1
 				.AddEntityFrameworkStores<ApplicationDbContext>();
 			services.AddControllersWithViews();
 			services.AddRazorPages();
+
+			services.AddTransient<IProductService, ProductService>();
+
+			services.AddTransient<ApiService>();
+			services.AddHttpClient();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +70,9 @@ namespace Labb1
 			app.UseStaticFiles();
 
 			app.UseRouting();
+
+			app.UseCors();
+			
 
 			app.UseAuthentication();
 			app.UseAuthorization();
