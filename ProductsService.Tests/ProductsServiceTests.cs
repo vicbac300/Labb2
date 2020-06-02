@@ -9,7 +9,7 @@ using System.Net;
 
 namespace ProductsService.Tests
 {
-	public class ControllerTests
+	public class ProductsServiceTests
 	{
 		[Fact]
 		public async Task GetAllProducts_Returns_Ok()
