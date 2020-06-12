@@ -9,7 +9,7 @@ namespace ProductsService.Data
 	{
 		public static void Init(ProductDbContext context)
 		{
-			//context.Database.EnsureDeleted();
+			//context.Database.EnsureDeleted(); // Tar bort först. Bäst så medan vi testar.
 			bool a = context.Database.EnsureCreated();
 
 			if (context.Products.Count() > 0)

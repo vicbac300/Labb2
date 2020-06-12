@@ -1,7 +1,6 @@
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.csprojAssemblyReference.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\staticwebassets\ProductsService.StaticWebAssets.Manifest.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\staticwebassets\ProductsService.StaticWebAssets.xml
-F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.MvcApplicationPartsAssemblyInfo.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.AssemblyInfoInputs.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.AssemblyInfo.cs
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -49,3 +48,5 @@ F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\D
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.csproj.CopyComplete
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.dll
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.pdb
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\ProductsService\obj\Debug\netcoreapp3.1\ProductsService.MvcApplicationPartsAssemblyInfo.cache

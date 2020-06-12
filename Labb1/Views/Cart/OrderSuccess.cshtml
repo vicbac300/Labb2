@@ -10,7 +10,7 @@
     <div class="card bg-light col-sm-12 col-md-4">
         <div class="card-body">
             <h3 class="card-title">
-                Order number: 
+                Order ID:
                 @Html.DisplayFor(modelItem => modelItem.Order.ID)
             </h3>
             <div class="card-text">
@@ -36,47 +36,47 @@
     </div>
 
     <div class="col-sm-12 col-md-8">
-            <table class="table table-responsive-sm">
-                <thead>
+        <table class="table table-responsive-sm">
+            <thead>
+                <tr>
+                    <th>
+                        NAME
+                    </th>
+                    <th>
+                        PRICE
+                    </th>
+                    <th>
+                        AMOUNT
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Order.OrderRows)
+                {
                     <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => new OrderRow().Product.Name)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => new OrderRow().Product.Price)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => new OrderRow().Amount)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.Order.OrderRows)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Product.Name)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Product.Price)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Amount)
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">
-
-                            @Html.LabelFor(modelItem => modelItem.Order.TotalPrice)
-                            @Html.DisplayFor(modelItem => modelItem.Order.TotalPrice)
-
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.GetProduct(item).Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.GetProduct(item).Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
                         </td>
                     </tr>
-                </tfoot>
-            </table>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">
+
+                        @Html.LabelFor(modelItem => modelItem.Order.TotalPrice)
+                        @Html.DisplayFor(modelItem => modelItem.Order.TotalPrice)
+
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>

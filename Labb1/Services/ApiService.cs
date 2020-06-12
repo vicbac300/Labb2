@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Text;
 using System.Net.Http;
 
 namespace Labb1.Services
 {
 	public class ApiService
 	{
-		private const string DOMAIN = "https://localhost:44391";
+
+
+		public const string PRODUCT_SERVICE_DOMAIN = "https://localhost:44391";
+		public const string ORDER_SERVICE_DOMAIN = "https://localhost:44329";
 
 		private readonly HttpClient client;
 
@@ -18,16 +22,46 @@ namespace Labb1.Services
 			this.client = clientFactory.CreateClient();
 		}
 
-		public IEnumerable<T> GetAll<T>(string apiPath)
+		public void Post<T>(T item, string apiPath, string domain)
 		{
-			var request = new HttpRequestMessage(HttpMethod.Get, DOMAIN + "/" + apiPath);
+			Post<T, object>(item, apiPath, domain);
+		}
+
+		public ReturnType Post<T, ReturnType>(T item, string apiPath, string domain)
+		{
+			var request = new HttpRequestMessage(HttpMethod.Post, domain + "/" + apiPath);
+
+			var postJson = JsonSerializer.Serialize(item);
+			request.Content = new StringContent(postJson, Encoding.UTF8, "application/json");
+
+			var response = SendRequestAsync(request).GetAwaiter().GetResult();
+			ReturnType returnedObject = default;
+			if (response != null && response.Content != null)
+			{
+				try
+				{
+					returnedObject = DeserializeJson<ReturnType>(response).GetAwaiter().GetResult();
+				}
+				catch { }
+				
+			}
+
+			return returnedObject;
+
+		}
+
+
+
+		public IEnumerable<T> GetAll<T>(string apiPath, string domain)
+		{
+			var request = new HttpRequestMessage(HttpMethod.Get, domain + "/" + apiPath);
 			var response = client.SendAsync(request).GetAwaiter().GetResult();
 			return DeserializeJson<IEnumerable<T>>(response).GetAwaiter().GetResult();
 		}
 
-		public T GetOne<T>(string apiPath)
+		public T GetOne<T>(string apiPath, string domain)
 		{
-			var request = new HttpRequestMessage(HttpMethod.Get, DOMAIN + "/" + apiPath);
+			var request = new HttpRequestMessage(HttpMethod.Get, domain + "/" + apiPath);
 			var response = client.SendAsync(request).GetAwaiter().GetResult();
 			return DeserializeJson<T>(response).GetAwaiter().GetResult();
 		}
@@ -42,6 +76,11 @@ namespace Labb1.Services
 			});
 
 			return result;
+		}
+
+		private async Task<HttpResponseMessage> SendRequestAsync(HttpRequestMessage request)
+		{
+			return await client.SendAsync(request);
 		}
 	}
 }

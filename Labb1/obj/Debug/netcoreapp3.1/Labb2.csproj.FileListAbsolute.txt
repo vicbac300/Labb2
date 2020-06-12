@@ -468,8 +468,6 @@ F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netco
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.csprojAssemblyReference.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\staticwebassets\Labb2.StaticWebAssets.Manifest.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\staticwebassets\Labb2.StaticWebAssets.xml
-F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.MvcApplicationPartsAssemblyInfo.cs
-F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.MvcApplicationPartsAssemblyInfo.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.RazorAssemblyInfo.cache
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.RazorAssemblyInfo.cs
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.AssemblyInfoInputs.cache
@@ -501,3 +499,11 @@ F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netco
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.csproj.CopyComplete
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.dll
 F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.pdb
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\OrderService.exe
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\ProductsService.exe
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\OrderService.dll
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\ProductsService.dll
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\OrderService.pdb
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\bin\Debug\netcoreapp3.1\ProductsService.pdb
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.MvcApplicationPartsAssemblyInfo.cs
+F:\online\Dropbox\ITHS\3. Avancerad C#-programmering\Labb2\Labb1\obj\Debug\netcoreapp3.1\Labb2.MvcApplicationPartsAssemblyInfo.cache

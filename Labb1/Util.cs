@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Labb1.Models;
 using Labb1.ViewModels;
+using OrderService.Models;
 
 namespace Labb1
 {
@@ -13,7 +14,7 @@ namespace Labb1
 		{
 			return new OrderRow()
 			{
-				Product = cartItem.Product,
+				ProductID = cartItem.Product.ID,
 				Amount = cartItem.Amount
 			};
 		}

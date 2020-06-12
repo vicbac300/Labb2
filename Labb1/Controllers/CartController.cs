@@ -7,18 +7,20 @@ using Microsoft.AspNetCore.Identity;
 using Labb1.Services;
 using Labb1.ViewModels;
 using Labb1.Models;
-
+using OrderService.Models;
 namespace Labb1.Controllers
 {
     public class CartController : Controller
     {
         private readonly IProductService productService;
+        private readonly IOrderService orderService;
         private readonly UserManager<ApplicationUser> userManager;
 
-        public CartController(UserManager<ApplicationUser> userManager)
+        public CartController(UserManager<ApplicationUser> userManager, IProductService productService, IOrderService orderService)
         {
             this.userManager = userManager;
-            this.productService = new MockProductService();
+            this.productService = productService;
+            this.orderService = orderService;
         }
 
         public IActionResult Index()
@@ -74,10 +76,26 @@ namespace Labb1.Controllers
             order.Date = DateTime.Now;
             order.OrderRows = vm.Products.ToOrderRowList();
 
+            
             order.UserID = Guid.Parse(userManager.GetUserId(User));
+
+            Guid orderGuid = orderService.Add(order);
+            order.ID = orderGuid;
+
+            if (order.ID == Guid.Empty)
+            {
+                throw new Exception("Fel");
+            }
 
             orderViewModel.Order = order;
             orderViewModel.User = await userManager.GetUserAsync(User);
+
+
+            orderViewModel.AllProducts = new Dictionary<int, ProductsService.Models.Product>();
+            foreach (var product in productService.GetAll())
+            {
+                orderViewModel.AllProducts.Add(product.ID, product);
+            }
 
             return View("OrderSuccess", orderViewModel);
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Labb1.Models;
+using ProductsService.Models;
 
 namespace Labb1.Services
 {

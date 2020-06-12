@@ -23,14 +23,14 @@ namespace ProductsService.Data
             builder.Entity<Product>()
                 .ToTable("Products");
 
-            builder.Entity<Product>(entity =>
-            {
-                entity.Property(x => x.Name).HasMaxLength(500).IsRequired();
-                entity.Property(x => x.Price).IsRequired().HasColumnType("decimal(18,2)");
-            });
+            //builder.Entity<Product>(entity =>
+            //{
+            //    entity.Property(x => x.Name).HasMaxLength(500).IsRequired();
+            //    entity.Property(x => x.Price).IsRequired().HasColumnType("decimal(18,2)");
+            //});
 
-            // Set index on product name for faster searching
-            builder.Entity<Product>().HasIndex(x => x.Name);
+            //// Set index on product name for faster searching
+            //builder.Entity<Product>().HasIndex(x => x.Name);
         }
     }
 }

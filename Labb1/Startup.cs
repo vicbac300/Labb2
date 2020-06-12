@@ -47,6 +47,7 @@ namespace Labb1
 			services.AddRazorPages();
 
 			services.AddTransient<IProductService, ProductService>();
+			services.AddTransient<IOrderService, Labb1.Services.OrderService>();
 
 			services.AddTransient<ApiService>();
 			services.AddHttpClient();
